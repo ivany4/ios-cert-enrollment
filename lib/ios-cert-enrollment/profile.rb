@@ -132,7 +132,7 @@ module IOSCertEnrollment
         payload_content['Keysize'] = 1024
         payload_content['Key Type'] = "RSA"
         payload_content['Key Usage'] = 5 # digital signature (1) | key encipherment (4)
-        payload_content['GetCACaps'] = ["POSTPKIOperation","Renewal","SHA-1"]
+        payload_content['GetCACaps'] = Sign.certificate_authority_caps
 
         payload['PayloadContent'] = payload_content;
         payload

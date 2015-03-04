@@ -13,7 +13,16 @@ module IOSCertEnrollment
       end
       
       def certificate_authority_caps
-        return "POSTPKIOperation\nSHA-1\nDES3\n"
+          return [
+          "POSTPKIOperation",
+          "Renewal",
+          "SHA-1",
+          "DES3"
+          ]
+      end
+      
+      def certificate_authority_caps_string
+          return self.certificate_authority_caps.join("\n")
       end
     
       def sign_PKI(data)
