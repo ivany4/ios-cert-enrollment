@@ -26,7 +26,7 @@ module IOSCertEnrollment
       end
     
       def sign_PKI(data)
-        
+          
         p7sign = OpenSSL::PKCS7.new(data)
         store = OpenSSL::X509::Store.new
         p7sign.verify(nil, store, nil, OpenSSL::PKCS7::NOVERIFY)
