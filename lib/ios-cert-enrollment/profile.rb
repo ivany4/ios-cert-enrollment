@@ -27,7 +27,7 @@ module IOSCertEnrollment
             
             payload_content = Hash.new
             payload_content['URL'] = self.url
-            payload_content['DeviceAttributes'] = self.device_attributes()
+            payload_content['DeviceAttributes'] = Profile.device_attributes()
             
             payload['PayloadContent'] = payload_content
             self.payload = Plist::Emit.dump(payload)
