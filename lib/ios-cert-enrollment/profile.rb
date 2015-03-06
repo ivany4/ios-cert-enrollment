@@ -139,6 +139,8 @@ module IOSCertEnrollment
             payload_content['Key Type'] = "RSA"
             payload_content['Key Usage'] = 5 # digital signature (1) | key encipherment (4)
             payload_content['GetCACaps'] = Sign.certificate_authority_caps
+            payload_content['Name'] = ""
+            payload_content['CAFingerprint'] = StringIO.new(OpenSSL::Digest::SHA1.new(SSL.intermediate_certificates[0].to_der).digest)
             
             payload['PayloadContent'] = payload_content;
             payload
